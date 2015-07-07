@@ -1,0 +1,2 @@
+# ezmodal
+jQuery plugin eZmodal
