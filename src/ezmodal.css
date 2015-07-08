@@ -1,0 +1,55 @@
+.ezmodal {
+    background: #fff;
+    padding: 0;
+    font-size: 14px;
+    position: fixed;
+    z-index: 90000;
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(50, 50, 50, 0.8);
+    -moz-box-shadow:    0px 0px 15px 0px rgba(50, 50, 50, 0.8);
+    box-shadow:         0px 0px 15px 0px rgba(50, 50, 50, 0.8);
+    width: 500px;
+    height: 350px;
+    top: 50%;
+    left: 50%;
+    margin-top: -175px;
+    margin-left: -250px;
+    z-index: 90001;
+}
+
+.ezmodal .header {
+    font-size: 22px;
+    padding: 10px 15px;
+    background: #efefef;
+    border-bottom: 1px solid #e3e3e3;
+}
+
+.ezmodal .content {
+    position: absolute;
+    top: 53px;
+    bottom: 53px;
+    left: 0;
+    right: 0;
+    padding: 10px;
+}
+
+.ezmodal .footer {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    padding: 10px 15px;
+    background: #efefef;
+    border-top: 1px solid #e3e3e3;
+    text-align: right;
+}
+
+.ezmodal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 90000;
+    background: #000;
+    opacity: 0.6;
+}
