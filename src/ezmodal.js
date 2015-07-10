@@ -10,35 +10,55 @@
 (function ($) {
     "use strict";
     
+    $(window).on('keyup', function (event) {
+        if (event.keyCode === 27) {
+            var data = $('.ezmodal').data('ezmodal');
+            if (data.options.closable) {
+                $('.ezmodal').ezmodal('hide');
+            }
+        }
+    });
+
+    $(document).on('click', '.ezmodal', function () {
+        var data = $(this).data('ezmodal');
+        if (data.options.closable) {
+            $(this).ezmodal('hide');
+        }
+    });
+
+    $(document).on('click', '.ezmodal .ezmodal-container', function (event) {
+        event.stopPropagation();
+    });
+
+    $(document).on('click', '.ezmodal .ezmodal-close', function () {
+        $(this).parent().parent().parent().ezmodal('hide');
+    });
+
+    $(document).on('click', '[data-ezclose]', function () {
+        $(this).parent().parent().parent().ezmodal('hide');
+    });
+
     var EZmodal = function (element, options) {
         this.options = options;
         this.$element = $(element);
-        this.$elementEZmodal = [];
     };
 
     EZmodal.prototype = {
         show: function () {
             this.$element.show();
+            this.options.onShow();
         },
         
         hide: function () {
-            this.$element.show();
-        },
-        
-        html: function () {
-            
+            this.$element.hide();
+            this.options.onClose();
         },
         
         constructor: function () {
-            var $html = $('<div class="ezmodal-container"></div>');
-            
-            $html.html(this.$element);
-            
-            $('body').append($html);
-            
-            /*if (!this.options.autoOpen) {
-                this.$element.hide();
-            }*/
+            this.$element.find('.ezmodal-container').css({
+                'width': this.options.width+'px',
+                'margin-left': '-'+(this.options.width/2)+'px'
+            });
         }
     };
 
@@ -69,10 +89,10 @@
     };
 
     $.fn.ezmodal.defaults = {
-        'size': 'small',
-        'modal': true,
-        'preserve': false,
-        'autoOpen': false
+        'width': 500,
+        'closable': true,
+        'onShow': function () {},
+        'onClose': function () {}
     };
 
     $.fn.ezmodal.noConflict = function () {
@@ -81,13 +101,13 @@
     };
 
     // Data attributes register
-    $('.ezmodal').each(function () {
+    /*$('.ezmodal').each(function () {
         var $this = $(this),
             options = {
                 'size': $this.attr('data-ezmodal-size')
             };
 
         $this.ezmodal(options);
-    });
+    });*/
 
 })(window.jQuery);

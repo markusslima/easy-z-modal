@@ -19,30 +19,43 @@
     <body>
         
         <h1>Example 1</h1>
-        <p>Eu dou dinheiro pra minha filha. Eu dou dinheiro pra ela viajar, então é... é... Já vivi muito sem dinheiro, já vivi muito com dinheiro. -Jornalista: Coloca esse dinheiro na poupança que a senhora ganha R$10 mil por mês. -Dilma: O que que é R$10 mil?</p>
+        
+        
+        
+        <div id="myModal" class="ezmodal">
+            <div class="ezmodal-container">
+                <div class="ezmodal-header">
+                    <div class="ezmodal-close">x</div>
+                    Titulo do modal
+                </div>
+                <div class="ezmodal-content">
+                    <p>Eu dou dinheiro pra minha filha. Eu dou dinheiro pra ela viajar, então é... é... Já vivi muito sem dinheiro, já vivi muito com dinheiro. -Jornalista: Coloca esse dinheiro na poupança que a senhora ganha R$10 mil por mês. -Dilma: O que que é R$10 mil?</p>
 
-        <p>Se hoje é o dia das crianças... Ontem eu disse: o dia da criança é o dia da mãe, dos pais, das professoras, mas também é o dia dos animais, sempre que você olha uma criança, há sempre uma figura oculta, que é um cachorro atrás. O que é algo muito importante!</p>
+                    <p>Se hoje é o dia das crianças... Ontem eu disse: o dia da criança é o dia da mãe, dos pais, das professoras, mas também é o dia dos animais, sempre que você olha uma criança, há sempre uma figura oculta, que é um cachorro atrás. O que é algo muito importante!</p>
 
-        <p>A população ela precisa da Zona Franca de Manaus, porque na Zona franca de Manaus, não é uma zona de exportação, é uma zona para o Brasil. Portanto ela tem um objetivo, ela evita o desmatamento, que é altamente lucravito. Derrubar arvores da natureza é muito lucrativo!</p>
-        
-        
-        <div class="ezmodal-overlay">
-        </div>
-        <div class="ezmodal">
-            <div class="header">
-                Titulo do modal
-            </div>
-            <div class="content">
-                Conteudo do modal
-            </div>
-            <div class="footer">
-                <button type="button" class="btn btn-primary">Ok</button>
-                <button type="button" class="btn">Cancelar</button>
+                    <p>A população ela precisa da Zona Franca de Manaus, porque na Zona franca de Manaus, não é uma zona de exportação, é uma zona para o Brasil. Portanto ela tem um objetivo, ela evita o desmatamento, que é altamente lucravito. Derrubar arvores da natureza é muito lucrativo!</p>
+                </div>
+                <div class="ezmodal-footer">
+                    <button type="button" class="btn btn-primary">Ok</button>
+                    <button type="button" class="btn" data-ezclose>Fechar</button>
+                </div>
             </div>
         </div>
         
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="src/ezmodal.js"></script>
+        <script type="text/javascript">
+            $('#myModal').ezmodal({
+                closable: true,
+                width: 800,
+                onShow: function () {
+                    alert('open');
+                },
+                onClose: function () {
+                    alert('close');
+                }
+            });
+        </script>
     </body>
 </html>
