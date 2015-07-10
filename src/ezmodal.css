@@ -35,7 +35,7 @@
 
 .ezmodal .ezmodal-close {
     position: absolute;
-    top: 14px;
+    top: 9px;
     right: 20px;
     font-weight: bold;
     font-family: Verdana;
@@ -55,6 +55,8 @@
     border-bottom: 1px solid #e3e3e3;
     text-align: center;
     border-radius: 7px 7px 0 0;
+    line-height: 32px;
+    color: #646464;
 }
 
 .ezmodal .ezmodal-content {
