@@ -34,7 +34,7 @@
         $(this).parent().parent().parent().ezmodal('hide');
     });
 
-    $(document).on('click', '[data-ezclose]', function () {
+    $(document).on('click', '[data-dismiss="ezmodal"]', function () {
         $(this).parent().parent().parent().ezmodal('hide');
     });
 
@@ -53,12 +53,22 @@
             this.$element.hide();
             this.options.onClose();
         },
+
+        isVisible: function () {
+            return this.$element.css('display') === 'block' ? true : false;
+        },
         
         constructor: function () {
             this.$element.find('.ezmodal-container').css({
                 'width': this.options.width+'px',
                 'margin-left': '-'+(this.options.width/2)+'px'
             });
+
+            if (!this.options.autoOpen) {
+                this.hide();
+            } else {
+                this.show();
+            }
         }
     };
 
@@ -91,6 +101,7 @@
     $.fn.ezmodal.defaults = {
         'width': 500,
         'closable': true,
+        'autoOpen': false,
         'onShow': function () {},
         'onClose': function () {}
     };
@@ -99,15 +110,4 @@
         $.fn.ezmodal = old;
         return this;
     };
-
-    // Data attributes register
-    /*$('.ezmodal').each(function () {
-        var $this = $(this),
-            options = {
-                'size': $this.attr('data-ezmodal-size')
-            };
-
-        $this.ezmodal(options);
-    });*/
-
 })(window.jQuery);
