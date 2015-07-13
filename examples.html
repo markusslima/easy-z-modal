@@ -19,13 +19,11 @@
     <body>
         
         <h1>Example 1</h1>
-        
-        
-        
+        <button type="button" class=" btn btn-primary" ezmodal-target="#myModal">Modal</button>
         <div id="myModal" class="ezmodal">
             <div class="ezmodal-container">
                 <div class="ezmodal-header">
-                    <div class="ezmodal-close">x</div>
+                    <div class="ezmodal-close" data-dismiss="ezmodal">x</div>
                     Titulo do modal
                 </div>
                 <div class="ezmodal-content">
@@ -47,15 +45,16 @@
         <script type="text/javascript" src="src/ezmodal.js"></script>
         <script type="text/javascript">
             $('#myModal').ezmodal({
+                width: 'full',
                 closable: true,
                 onShow: function () {
-                    alert('open');
+                    //alert('open');
                 },
                 onClose: function () {
-                    alert('close');
+                    //alert('close');
                 },
-                autoOpen: true,
-                responsiveSize: 'small'
+                //autoOpen: true,
+                animation: true
             });
         </script>
     </body>

@@ -29,13 +29,13 @@
     $(document).on('click', '.ezmodal .ezmodal-container', function (event) {
         event.stopPropagation();
     });
-
-    $(document).on('click', '.ezmodal .ezmodal-close', function () {
+    
+    $(document).on('click', '[data-dismiss="ezmodal"]', function () {
         $(this).parent().parent().parent().ezmodal('hide');
     });
 
-    $(document).on('click', '[data-dismiss="ezmodal"]', function () {
-        $(this).parent().parent().parent().ezmodal('hide');
+    $(document).on('click', '[ezmodal-target]', function () {
+        $($(this).attr('ezmodal-target')).ezmodal('show');
     });
 
     var EZmodal = function (element, options) {
@@ -55,27 +55,31 @@
         },
 
         isVisible: function () {
-            return this.$element.css('display') === 'block' ? true : false;
+            return this.$element.css('visibility') === 'visible' ? true : false;
         },
         
         constructor: function () {
-            var _self = this,
+            var _this = this,
                 container = this.$element.find('.ezmodal-container');
+                
+            if (this.options.autoOpen) {
+                this.show();
+            }
             
-            if (this.options.responsiveSize === 'none') {
+            if (Number(this.options.width)) {
                 container.css({
-                    'width':  _self.options.width+'px',
-                    'margin-left': '-'+( _self.options.width/2)+'px',
+                    'width':  _this.options.width+'px',
+                    'margin-left': '-'+( _this.options.width/2)+'px',
                 });
             } else {
                 container.css({
                     'position': 'relative',
                     'left': 'initial',
-                    'margin': '50px auto' 
+                    'margin': '5% auto' 
                 });
-                switch (_self.options.responsiveSize) {
+                switch (_this.options.width) {
                     case 'small':
-                        container.css({'width': '50%'});
+                        container.css({'width': '40%'});
                         break;
                     case 'medium':
                         container.css({'width': '75%'});
@@ -84,12 +88,6 @@
                         container.css({'width': '95%'});
                         break;
                 }
-            }
-
-            if (!this.options.autoOpen) {
-                this.hide();
-            } else {
-                this.show();
             }
         }
     };
@@ -113,7 +111,7 @@
                 }
             });
 
-        if (typeof get !== undefined) {
+        if (typeof get !== 'undefined') {
             return get;
         } else {
             return element;
@@ -126,7 +124,7 @@
         'autoOpen': false,
         'onShow': function () {},
         'onClose': function () {},
-        'responsiveSize': 'none'
+        'animation': true
     };
 
     $.fn.ezmodal.noConflict = function () {
