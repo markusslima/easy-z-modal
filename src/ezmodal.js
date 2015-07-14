@@ -44,6 +44,10 @@
     };
 
     EZmodal.prototype = {
+        width: function () {
+            
+        },
+        
         show: function () {
             this.$element.show();
             this.options.onShow();
@@ -68,15 +72,9 @@
             
             if (Number(this.options.width)) {
                 container.css({
-                    'width':  _this.options.width+'px',
-                    'margin-left': '-'+( _this.options.width/2)+'px',
+                    'width':  _this.options.width+'px'
                 });
             } else {
-                container.css({
-                    'position': 'relative',
-                    'left': 'initial',
-                    'margin': '5% auto' 
-                });
                 switch (_this.options.width) {
                     case 'small':
                         container.css({'width': '40%'});
@@ -123,8 +121,7 @@
         'closable': true,
         'autoOpen': false,
         'onShow': function () {},
-        'onClose': function () {},
-        'animation': true
+        'onClose': function () {}
     };
 
     $.fn.ezmodal.noConflict = function () {

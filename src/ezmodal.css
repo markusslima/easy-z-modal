@@ -25,13 +25,16 @@
     padding: 0;
     font-size: 14px;
     position: fixed;
-    top: 5%;
+    top: 50%;
     left: 50%;
-    -webkit-box-shadow: 0px 0px 15px 0px rgba(50, 50, 50, 0.8);
-    -moz-box-shadow:    0px 0px 15px 0px rgba(50, 50, 50, 0.8);
-    box-shadow:         0px 0px 15px 0px rgba(50, 50, 50, 0.8);
     z-index: 90001;
     border-radius: 7px;
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(50, 50, 50, 0.8);
+       -moz-box-shadow: 0px 0px 15px 0px rgba(50, 50, 50, 0.8);
+            box-shadow: 0px 0px 15px 0px rgba(50, 50, 50, 0.8);
+    -webkit-transform: translateY(-50%) translateX(-50%); 
+        -ms-transform: translateY(-50%) translateX(-50%);
+            transform: translateY(-50%) translateX(-50%);
 }
 
 .ezmodal .ezmodal-close {
@@ -71,4 +74,3 @@
     text-align: right;
     border-radius: 0 0 7px 7px;
 }
-
