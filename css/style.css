@@ -1,0 +1,10 @@
+html, body {
+	background-color: #303030;
+	color: #dedede;
+}
+
+ .big-font {
+	 font-size: 70px;
+	 margin-top: 40px;
+	 margin-bottom: 40px;
+ }
