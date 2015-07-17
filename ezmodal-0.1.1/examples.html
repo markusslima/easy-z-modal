@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <title>Examples eZmodal</title>
+        <meta name="description" content="Examples eZmodal">
+        <meta name="author" content="Markus Lima">
+    
+        <link rel="stylesheet" href="src/ezmodal.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+
+        <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>eZmodal</h1>
+                    <br>
+                    <button type="button" class="btn btn-lg btn-primary" ezmodal-target="#example1">Default Modal</button>
+                    <div id="example1" class="ezmodal" ezmodal-width="900">
+                        <div class="ezmodal-container">
+                            <div class="ezmodal-header">
+                                <div class="ezmodal-close" data-dismiss="ezmodal">x</div>
+                                Default
+                            </div>
+                            <div class="ezmodal-content">
+                                <p>Eu dou dinheiro pra minha filha. Eu dou dinheiro pra ela viajar, então é... é... Já vivi muito sem dinheiro, já vivi muito com dinheiro. -Jornalista: Coloca esse dinheiro na poupança que a senhora ganha R$10 mil por mês. -Dilma: O que que é R$10 mil?</p>
+            
+                                <p>Se hoje é o dia das crianças... Ontem eu disse: o dia da criança é o dia da mãe, dos pais, das professoras, mas também é o dia dos animais, sempre que você olha uma criança, há sempre uma figura oculta, que é um cachorro atrás. O que é algo muito importante!</p>
+                            </div>
+                            <div class="ezmodal-footer">
+                                <button type="button" class="btn" data-dismiss="ezmodal">Fechar</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <br>
+                    
+                    <div class="page-header">
+                        <h1><small>options</small></h1>
+                    </div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Option</th>
+                                <th>Values</th>
+                                <th>Description</th>
+                                <th>Example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>width</td>
+                                <td><b>[Number | String]</b>, Default: <b>500</b></td>
+                                <td>Use <b>Number</b> or <b>'small'</b>, <b>'medium'</b>, <b>'full'</b> strings responsive width</td>
+                                <td>
+                                    <button type="button" class=" btn btn-primary" ezmodal-target="#example2">Example</button>
+                                    <div id="example2" class="ezmodal" ezmodal-width="full">
+                                        <div class="ezmodal-container">
+                                            <div class="ezmodal-header">
+                                                <div class="ezmodal-close" data-dismiss="ezmodal">x</div>
+                                                Full width example
+                                            </div>
+                                            <div class="ezmodal-content">
+                                                <p>Eu dou dinheiro pra minha filha. Eu dou dinheiro pra ela viajar, então é... é... Já vivi muito sem dinheiro, já vivi muito com dinheiro. -Jornalista: Coloca esse dinheiro na poupança que a senhora ganha R$10 mil por mês. -Dilma: O que que é R$10 mil?</p>
+                            
+                                                <p>Se hoje é o dia das crianças... Ontem eu disse: o dia da criança é o dia da mãe, dos pais, das professoras, mas também é o dia dos animais, sempre que você olha uma criança, há sempre uma figura oculta, que é um cachorro atrás. O que é algo muito importante!</p>
+                            
+                                                <p>A população ela precisa da Zona Franca de Manaus, porque na Zona franca de Manaus, não é uma zona de exportação, é uma zona para o Brasil. Portanto ela tem um objetivo, ela evita o desmatamento, que é altamente lucravito. Derrubar arvores da natureza é muito lucrativo!</p>
+                                            </div>
+                                            <div class="ezmodal-footer">
+                                                <button type="button" class="btn" data-dismiss="ezmodal">Fechar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>closable</td>
+                                <td><b>[Boolean]</b>, Default: <b>true</b></td>
+                                <td>Place false to block the closing on click outside the modal</td>
+                                <td>
+                                    <button type="button" class=" btn btn-primary" ezmodal-target="#example3">Example</button>
+                                    <div id="example3" class="ezmodal" ezmodal-closable="false">
+                                        <div class="ezmodal-container">
+                                            <div class="ezmodal-header">
+                                                <div class="ezmodal-close" data-dismiss="ezmodal">x</div>
+                                                Not Closable
+                                            </div>
+                                            <div class="ezmodal-content">
+                                                <p>Eu dou dinheiro pra minha filha. Eu dou dinheiro pra ela viajar, então é... é... Já vivi muito sem dinheiro, já vivi muito com dinheiro. -Jornalista: Coloca esse dinheiro na poupança que a senhora ganha R$10 mil por mês. -Dilma: O que que é R$10 mil?</p>
+                            
+                                                <p>Se hoje é o dia das crianças... Ontem eu disse: o dia da criança é o dia da mãe, dos pais, das professoras, mas também é o dia dos animais, sempre que você olha uma criança, há sempre uma figura oculta, que é um cachorro atrás. O que é algo muito importante!</p>
+                            
+                                                <p>A população ela precisa da Zona Franca de Manaus, porque na Zona franca de Manaus, não é uma zona de exportação, é uma zona para o Brasil. Portanto ela tem um objetivo, ela evita o desmatamento, que é altamente lucravito. Derrubar arvores da natureza é muito lucrativo!</p>
+                                            </div>
+                                            <div class="ezmodal-footer">
+                                                <button type="button" class="btn" data-dismiss="ezmodal">Fechar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>autoOpen</td>
+                                <td><b>[Boolean]</b>, Default: <b>false</b></td>
+                                <td>True to the modal open automatically</td>
+                                <td>
+                                    <div id="example4" class="ezmodal" ezmodal-autoopen="true">
+                                        <div class="ezmodal-container">
+                                            <div class="ezmodal-header">
+                                                <div class="ezmodal-close" data-dismiss="ezmodal">x</div>
+                                                Auto open example
+                                            </div>
+                                            <div class="ezmodal-content">
+                                                <p>A população ela precisa da Zona Franca de Manaus, porque na Zona franca de Manaus, não é uma zona de exportação, é uma zona para o Brasil. Portanto ela tem um objetivo, ela evita o desmatamento, que é altamente lucravito. Derrubar arvores da natureza é muito lucrativo!</p>
+                                            </div>
+                                            <div class="ezmodal-footer">
+                                                <button type="button" class="btn" data-dismiss="ezmodal">Fechar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="page-header">
+                        <h1><small>methods</small></h1>
+                    </div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Method</th>
+                                <th>Using</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>show</td>
+                                <td><code>$('#mymodal').ezmodal('show')</code></td>
+                                <td>Open the modal</td>
+                            </tr>
+                            <tr>
+                                <td>hide</td>
+                                <td><code>$('#mymodal').ezmodal('hide')</code></td>
+                                <td>Close the modal</td>
+                            </tr>
+                            <tr>
+                                <td>isVisible</td>
+                                <td><code>$('#mymodal').ezmodal('isVisible')</code></td>
+                                <td>Check modal is visible</td>
+                            </tr>
+                        </tbody>
+                    </table>           
+                    
+                    <div class="page-header">
+                        <h1><small>callback</small></h1>
+                    </div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Event</th>
+                                <th>Using</th>
+                                <th>Description</th>
+                                <th>Example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>onShow</td>
+                                <td><code>$('#mymodal').ezmodal({'onShow': function () { --- };})</code></td>
+                                <td>Performs a function soon after opening the modal</td>
+                                <td width="120px">
+                                    <button type="button" class=" btn btn-primary" ezmodal-target="#example5">Example</button>
+                                    <div id="example5" class="ezmodal">
+                                        <div class="ezmodal-container">
+                                            <div class="ezmodal-header">
+                                                <div class="ezmodal-close" data-dismiss="ezmodal">x</div>
+                                                Execute function when opening
+                                            </div>
+                                            <div class="ezmodal-content">
+                                                <p>Eu dou dinheiro pra minha filha. Eu dou dinheiro pra ela viajar, então é... é... Já vivi muito sem dinheiro, já vivi muito com dinheiro. -Jornalista: Coloca esse dinheiro na poupança que a senhora ganha R$10 mil por mês. -Dilma: O que que é R$10 mil?</p>
+                            
+                                                <p>Se hoje é o dia das crianças... Ontem eu disse: o dia da criança é o dia da mãe, dos pais, das professoras, mas também é o dia dos animais, sempre que você olha uma criança, há sempre uma figura oculta, que é um cachorro atrás. O que é algo muito importante!</p>
+                                            </div>
+                                            <div class="ezmodal-footer">
+                                                <button type="button" class="btn" data-dismiss="ezmodal">Fechar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>onClose</td>
+                                <td><code>$('#mymodal').ezmodal({'onClose': function () { --- };})</code></td>
+                                <td>Performs a function soon before closing the modal</td>
+                                <td width="120px">
+                                    <button type="button" class=" btn btn-primary" ezmodal-target="#example6">Example</button>
+                                    <div id="example6" class="ezmodal">
+                                        <div class="ezmodal-container">
+                                            <div class="ezmodal-header">
+                                                <div class="ezmodal-close" data-dismiss="ezmodal">x</div>
+                                                Execute function after closing
+                                            </div>
+                                            <div class="ezmodal-content">
+                                                <p>Eu dou dinheiro pra minha filha. Eu dou dinheiro pra ela viajar, então é... é... Já vivi muito sem dinheiro, já vivi muito com dinheiro. -Jornalista: Coloca esse dinheiro na poupança que a senhora ganha R$10 mil por mês. -Dilma: O que que é R$10 mil?</p>
+                            
+                                                <p>Se hoje é o dia das crianças... Ontem eu disse: o dia da criança é o dia da mãe, dos pais, das professoras, mas também é o dia dos animais, sempre que você olha uma criança, há sempre uma figura oculta, que é um cachorro atrás. O que é algo muito importante!</p>
+                                            </div>
+                                            <div class="ezmodal-footer">
+                                                <button type="button" class="btn" data-dismiss="ezmodal">Fechar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+        <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="src/ezmodal.js"></script>
+        <script type="text/javascript">            
+            $('#example5').ezmodal({
+                'onShow': function () {
+                    alert('open');
+                }
+            });
+            
+            $('#example6').ezmodal({
+                'onClose': function () {
+                    alert('close');
+                }
+            });
+        </script>
+    </body>
+</html>
