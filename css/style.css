@@ -1,6 +1,11 @@
 html, body {
 	background-color: #303030;
-	color: #dedede;
+}
+
+.white,
+.page-header,
+table {
+	color: #ededed;
 }
 
 .big-font {
