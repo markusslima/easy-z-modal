@@ -50,11 +50,18 @@
         show: function () {
             this.$element.show();
             this.options.onShow();
+            $('body').css('overflow', 'hidden');
+            if (this.$element.find('.ezmodal-container').find('input, textarea, select, button, a').size() === 0) {
+                this.$element.find('.ezmodal-footer').find('button, a').first().focus();
+            } else {
+                this.$element.find('.ezmodal-container').find('input, textarea, select, button, a').first().focus();
+            }
         },
         
         hide: function () {
             this.$element.hide();
             this.options.onClose();
+            $('body').css('overflow', 'inherit');
         },
 
         isVisible: function () {
@@ -63,7 +70,9 @@
         
         constructor: function () {
             var width = this.options.width,
-                container = this.$element.find('.ezmodal-container');
+                container = this.$element.find('.ezmodal-container'),
+                footer = this.$element.find('.ezmodal-footer'),
+                numElem = container.find('input, textarea, select, button, a').size();
                 
             if (this.options.autoOpen) {
                 this.show();
@@ -86,6 +95,26 @@
 					break;
                 }
             }
+
+            // Control tab navigator
+            container.find('input, textarea, select, button, a')
+                .each(function (i) {
+                    $(this).attr({'tabindex': i + 1});
+                });
+
+            footer.find('button, a')
+                .each(function () {
+                    numElem++;
+                    $(this).attr({'tabindex': numElem});
+                })
+                .last()
+                .blur(function () {
+                    if (numElem === 0) {
+                        this.$element.footer.find('button, a').first().focus();
+                    } else {
+                        container.find('input, textarea, select, button, a').first().focus();
+                    }
+                });
         }
     };
 
