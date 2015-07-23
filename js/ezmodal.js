@@ -4,7 +4,7 @@
  * github: https://github.com/markusslima/ezmodal
  *
  * Copyright (c) 2015 Markus Vinicius da Silva Lima
- * Version 0.1.1
+ * Version 0.1.2
  * Licensed under the MIT license.
  */
 (function ($) {
@@ -14,7 +14,7 @@
         if (event.keyCode === 27) {
             $('.ezmodal').each(function () {
                 if ($(this).ezmodal('isVisible')) {
-                    if ($(this).data('ezmodal').options.closable) {
+                    if ($(this).data('ezmodal').options.escClose) {
                         $(this).ezmodal('hide');
                     }
                 }
@@ -50,11 +50,18 @@
         show: function () {
             this.$element.show();
             this.options.onShow();
+            $('body').css('overflow', 'hidden');
+            if (this.$element.find('.ezmodal-container').find('input, textarea, select, button, a').size() === 0) {
+                this.$element.find('.ezmodal-footer').find('button, a').first().focus();
+            } else {
+                this.$element.find('.ezmodal-container').find('input, textarea, select, button, a').first().focus();
+            }
         },
         
         hide: function () {
             this.$element.hide();
             this.options.onClose();
+            $('body').css('overflow', 'inherit');
         },
 
         isVisible: function () {
@@ -63,7 +70,9 @@
         
         constructor: function () {
             var width = this.options.width,
-                container = this.$element.find('.ezmodal-container');
+                container = this.$element.find('.ezmodal-container'),
+                footer = this.$element.find('.ezmodal-footer'),
+                numElem = container.find('input, textarea, select, button, a').size();
                 
             if (this.options.autoOpen) {
                 this.show();
@@ -86,6 +95,26 @@
 					break;
                 }
             }
+
+            // Control tab navigator
+            container.find('input, textarea, select, button, a')
+                .each(function (i) {
+                    $(this).attr({'tabindex': i + 1});
+                });
+
+            footer.find('button, a')
+                .each(function () {
+                    numElem++;
+                    $(this).attr({'tabindex': numElem});
+                })
+                .last()
+                .blur(function () {
+                    if (numElem === 0) {
+                        this.$element.footer.find('button, a').first().focus();
+                    } else {
+                        container.find('input, textarea, select, button, a').first().focus();
+                    }
+                });
         }
     };
 
@@ -118,6 +147,7 @@
     $.fn.ezmodal.defaults = {
         'width': 500,
         'closable': true,
+        'escClose': true,
         'autoOpen': false,
         'onShow': function () {},
         'onClose': function () {}
@@ -133,6 +163,7 @@
 			var $this = $(this),
                 options = {
 					'width' : $this.attr('ezmodal-width'),
+                    'escClose' : $this.attr('ezmodal-escclose') === 'false' ? false : true,
 					'closable' : $this.attr('ezmodal-closable') === 'false' ? false : true,
 					'autoOpen' : $this.attr('ezmodal-autoopen') === 'true' ? true : false
 				};

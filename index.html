@@ -4,10 +4,11 @@
     <head>
         <meta charset="utf-8">
 
-        <title>Examples eZmodal</title>
-        <meta name="description" content="Examples eZmodal">
+        <title>eZmodal - Simple and dynamic plugin dialog boxes</title>
+        <meta name="description" content="eZmodal simple and dynamic plugin dialog boxes. Use your creativity and customize to your">
         <meta name="author" content="Markus Lima">
     
+        <link rel="icon" type="image/png" href="img/favicon.png">
         <link rel="stylesheet" href="css/ezmodal.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/style.css">
@@ -16,41 +17,61 @@
         <!--[if lt IE 9]>
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
+        
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
     </head>
     <body>
+        <div class="myheader">
+            <h1 class="text-center big-font" style="margin-bottom: 10px;">eZmodal <small>v 0.1.2</small></h1>
+            <p class="text-center " style="margin-bottom: 40px;">Simple and dynamic plugin dialog boxes. Use your creativity and customize to your.</p>
+            <div class="text-center">
+                <a href="https://github.com/markusslima/ezmodal" class="btn btn-default"><span class="glyphicon glyphicon-random"></span> Github</a>
+                <a href="https://github.com/markusslima/ezmodal/archive/v0.1.1.zip" class="btn btn-primary"><span class="glyphicon glyphicon-arrow-down"></span> Download v0.1.1 .zip</a>
+                <a href="https://github.com/markusslima/ezmodal/archive/v0.1.1.tar.gz" class="btn btn-primary"><span class="glyphicon glyphicon-arrow-down"></span> Download v0.1.1 .tar.gz</a>
+			</div>
+    	</div>
         <div class="container">
             <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <h1 class="text-center white big-font">eZmodal <small>v 0.1.1</small></h1>
-                    <p class="text-center white">Simple and dynamic plugin dialog boxes. Use your creativity and customize to your.</p>
+                <div class="col-md-12">
                     <div class="text-center">
-                        <a href="https://github.com/markusslima/ezmodal" class="btn btn-default"><span class="glyphicon glyphicon-random"></span> Github</a>
-                        <a href="https://github.com/markusslima/ezmodal/archive/v0.1.1.zip" class="btn btn-primary"><span class="glyphicon glyphicon-arrow-down"></span> Download v0.1.1 .zip</a>
-                        <a href="https://github.com/markusslima/ezmodal/archive/v0.1.1.tar.gz" class="btn btn-primary"><span class="glyphicon glyphicon-arrow-down"></span> Download v0.1.1 .tar.gz</a>
-  					</div>
-                    <br>
+                        <iframe src="http://ghbtns.com/github-btn.html?user=markusslima&repo=ezmodal&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
+
+			<iframe src="http://ghbtns.com/github-btn.html?user=markusslima&repo=ezmodal&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe>
+                        
+                        <a href="https://twitter.com/share" class="twitter-share-button" data-via="markusslima" data-hashtags="jquerypluginmodal">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                        &nbsp;
+                        &nbsp;
+                        <div class="g-plusone" data-size="medium" data-href="https://github.com/markusslima/ezmodal"></div>
+                    </div>
+                    
+                    <h2 class="white">Get Start</h2>
                     <div class="well well-lg">
-                        <h1>HTML</h1>
 <pre>
-&lt;button type="button" ezmodal-target="#example"&gt;Click here!&lt;/button&gt;
-&lt;div id="example" class="ezmodal"&gt;
-	&lt;div class="ezmodal-container"&gt;
-		&lt;div class="ezmodal-header"&gt;
-			&lt;div class="ezmodal-close" data-dismiss="ezmodal"&gt;x&lt;/div&gt;
-			...
-		&lt;/div&gt;
-		&lt;div class="ezmodal-content"&gt;
-			...
-		&lt;/div&gt;
-		&lt;div class="ezmodal-footer"&gt;
-			...
-		&lt;/div&gt;
-	&lt;div&gt;
-&lt;div&gt;
-</pre>
-                        <h1>JS</h1>
-<pre>
-$('#example').ezmodal();
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"&gt;&lt;/script&gt;        
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;button type="button" ezmodal-target="#example"&gt;Click here!&lt;/button&gt;
+        &lt;div id="example" class="ezmodal"&gt;
+            &lt;div class="ezmodal-container"&gt;
+                &lt;div class="ezmodal-header"&gt;
+                    &lt;div class="ezmodal-close" data-dismiss="ezmodal"&gt;x&lt;/div&gt;
+                    Title text
+                &lt;/div&gt;
+                &lt;div class="ezmodal-content"&gt;
+                    ...
+                &lt;/div&gt;
+                &lt;div class="ezmodal-footer"&gt;
+                    &lt;button type="button" data-dismiss="ezmodal"&gt;Close&lt;/button&gt;       			
+                &lt;/div&gt;
+            &lt;div&gt;
+        &lt;div&gt;
+
+        &lt;script type="text/javascript" src="src/ezmodal.min.js"&gt;&lt;/script&gt;        
+    &lt;/body&gt;
+&lt;/html&gt;
 </pre>
                     </div>
                     <div class="text-center"><button type="button" class="btn btn-lg btn-primary" ezmodal-target="#example0">Click here!</button></div>
@@ -70,15 +91,15 @@ $('#example').ezmodal();
                     </div>
                     
                     
-                    <div class="page-header">
-						<h1>Examples</h1>
-                    </div>
-					<div class="btn-group" role="group">
-                        <button type="button" class="btn btn-primary" ezmodal-target="#alertModal">Alert</button>
-                        <button type="button" class="btn btn-primary" ezmodal-target="#confirmModal">Confirm</button>
-                        <button type="button" class="btn btn-primary" ezmodal-target="#responsiveModal">Responsive</button>
-                        <button type="button" class="btn btn-primary" ezmodal-target="#nobuttonsModal">No buttons</button>
-					</div>
+    				<h2 class="white">Examples</h2>
+                    <div class="well well-lg">
+    					<div class="btn-group" role="group">
+                            <button type="button" class="btn btn-primary" ezmodal-target="#alertModal">Alert</button>
+                            <button type="button" class="btn btn-primary" ezmodal-target="#confirmModal">Confirm</button>
+                            <button type="button" class="btn btn-primary" ezmodal-target="#responsiveModal">Responsive</button>
+                            <button type="button" class="btn btn-primary" ezmodal-target="#nobuttonsModal">No buttons</button>
+    					</div>
+  					</div>
                     
                     <div id="alertModal" class="ezmodal" ezmodal-closable="false">
                         <div class="ezmodal-container">
@@ -134,115 +155,155 @@ $('#example').ezmodal();
                         </div>
                     </div>
 					
-                    <div class="page-header">
-                        <h1>Options</h1>
+                    <h2 class="white">Options</h2>
+                    <div class="well well-lg">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Option</th>
+                                    <th>Values</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>width</td>
+                                    <td><b>{Number|String}</b>, Default: <b>500</b></td>
+                                    <td>Use '<b>Number</b>' or <b>'small'</b>, <b>'medium'</b>, <b>'full'</b> responsive width</td>
+                                </tr>
+                                <tr>
+                                    <td>closable</td>
+                                    <td><b>{Boolean}</b>, Default: <b>true</b></td>
+                                    <td>Place false to block the closing on click outside the modal</td>
+                                </tr>
+                                <tr>
+                                    <td>escClose</td>
+                                    <td><b>{Boolean}</b>, Default: <b>true</b></td>
+                                    <td>Closes the modal with the esc key</td>
+                                </tr>
+                                <tr>
+                                    <td>autoOpen</td>
+                                    <td><b>{Boolean}</b>, Default: <b>false</b></td>
+                                    <td>True to the modal automatically open</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>Option</th>
-                                <th>Values</th>
-                                <th>Description</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>width</td>
-                                <td><b>{Number|String}</b>, Default: <b>500</b></td>
-                                <td>Use '<b>Number</b>' or <b>'small'</b>, <b>'medium'</b>, <b>'full'</b> responsive width</td>
-                            </tr>
-                            <tr>
-                                <td>closable</td>
-                                <td><b>{Boolean}</b>, Default: <b>true</b></td>
-                                <td>Place false to block the closing on click outside the modal</td>
-                            </tr>
-                            <tr>
-                                <td>autoOpen</td>
-                                <td><b>{Boolean}</b>, Default: <b>false</b></td>
-                                <td>True to the modal automatically open</td>
-                            </tr>
-                        </tbody>
-                    </table>
                     
-                    <div class="page-header">
-                        <h1>Events</h1>
+                    <h2 class="white">Data Attributes</h2>
+                    <div class="well well-lg">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Data attribute</th>
+                                    <th>Using</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>ezmodal-width</td>
+                                    <td><code>&lt;div class="ezmodal" ezmodal-width="800"&gt;</code></td>
+                                    <td>Sets the width of the modal</td>
+                                </tr>
+                                <tr>
+                                    <td>ezmodal-closable</td>
+                                    <td><code>&lt;div class="ezmodal" ezmodal-closable="false"&gt;</code></td>
+                                    <td>Place false to block the closing on click outside the modal</td>
+                                </tr>
+                                <tr>
+                                    <td>ezmodal-escclose</td>
+                                    <td><code>&lt;div class="ezmodal" ezmodal-escclose="false"&gt;</code></td>
+                                    <td>Closes by pressing the ESC key</td>
+                                </tr>
+                                <tr>
+                                    <td>ezmodal-autoopen</td>
+                                    <td><code>&lt;div class="ezmodal" ezmodal-autoopen="true"&gt;</code></td>
+                                    <td>Check modal is visible</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>Event</th>
-                                <th>Using</th>
-                                <th>Description</th>
-                                <th>Example</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>onShow</td>
-                                <td>
-<pre>
-$('#mymodal').ezmodal({
-    'onShow': function () {
-         --- 
-    };
-});
-</pre>
-                                </td>
-                                <td>Performs a function soon after opening the modal</td>
-                                <td width="120px">
-                                    <button type="button" class=" btn btn-primary" ezmodal-target="#example5">Example</button>
-                                    <div id="example5" class="ezmodal">
-                                        <div class="ezmodal-container">
-                                            <div class="ezmodal-header">
-                                                <div class="ezmodal-close" data-dismiss="ezmodal">x</div>
-                                                Execute function when opening
-                                            </div>
-                                            <div class="ezmodal-content">
-                                                <p>Eu dou dinheiro pra minha filha. Eu dou dinheiro pra ela viajar, então é... é... Já vivi muito sem dinheiro, já vivi muito com dinheiro. -Jornalista: Coloca esse dinheiro na poupança que a senhora ganha R$10 mil por mês. -Dilma: O que que é R$10 mil?</p>
-                            
-                                                <p>Se hoje é o dia das crianças... Ontem eu disse: o dia da criança é o dia da mãe, dos pais, das professoras, mas também é o dia dos animais, sempre que você olha uma criança, há sempre uma figura oculta, que é um cachorro atrás. O que é algo muito importante!</p>
-                                            </div>
-                                            <div class="ezmodal-footer">
-                                                <button type="button" class="btn" data-dismiss="ezmodal">Fechar</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>onClose</td>
-                                <td>
-<pre>
-$('#mymodal').ezmodal({
-    'onClose': function () {
-         --- 
-    };
-});
-</pre>
-                                </td>
-                                <td>Performs a function soon before closing the modal</td>
-                                <td width="120px">
-                                    <button type="button" class=" btn btn-primary" ezmodal-target="#example6">Example</button>
-                                    <div id="example6" class="ezmodal">
-                                        <div class="ezmodal-container">
-                                            <div class="ezmodal-header">
-                                                <div class="ezmodal-close" data-dismiss="ezmodal">x</div>
-                                                Execute function after closing
-                                            </div>
-                                            <div class="ezmodal-content">
-                                                <p>Eu dou dinheiro pra minha filha. Eu dou dinheiro pra ela viajar, então é... é... Já vivi muito sem dinheiro, já vivi muito com dinheiro. -Jornalista: Coloca esse dinheiro na poupança que a senhora ganha R$10 mil por mês. -Dilma: O que que é R$10 mil?</p>
-                            
-                                                <p>Se hoje é o dia das crianças... Ontem eu disse: o dia da criança é o dia da mãe, dos pais, das professoras, mas também é o dia dos animais, sempre que você olha uma criança, há sempre uma figura oculta, que é um cachorro atrás. O que é algo muito importante!</p>
-                                            </div>
-                                            <div class="ezmodal-footer">
-                                                <button type="button" class="btn" data-dismiss="ezmodal">Fechar</button>
+                    
+                    <h2 class="white">Events</h2>
+                    <div class="well well-lg">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Event</th>
+                                    <th>Using</th>
+                                    <th>Description</th>
+                                    <th>Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>onShow</td>
+                                    <td>
+    <pre>
+    $('#mymodal').ezmodal({
+        'onShow': function () {
+             --- 
+        };
+    });
+    </pre>
+                                    </td>
+                                    <td>Performs a function soon after opening the modal</td>
+                                    <td width="120px">
+                                        <button type="button" class=" btn btn-primary" ezmodal-target="#example5">Example</button>
+                                        <div id="example5" class="ezmodal">
+                                            <div class="ezmodal-container">
+                                                <div class="ezmodal-header">
+                                                    <div class="ezmodal-close" data-dismiss="ezmodal">x</div>
+                                                    Execute function when opening
+                                                </div>
+                                                <div class="ezmodal-content">
+                                                    <p>Eu dou dinheiro pra minha filha. Eu dou dinheiro pra ela viajar, então é... é... Já vivi muito sem dinheiro, já vivi muito com dinheiro. -Jornalista: Coloca esse dinheiro na poupança que a senhora ganha R$10 mil por mês. -Dilma: O que que é R$10 mil?</p>
+                                
+                                                    <p>Se hoje é o dia das crianças... Ontem eu disse: o dia da criança é o dia da mãe, dos pais, das professoras, mas também é o dia dos animais, sempre que você olha uma criança, há sempre uma figura oculta, que é um cachorro atrás. O que é algo muito importante!</p>
+                                                </div>
+                                                <div class="ezmodal-footer">
+                                                    <button type="button" class="btn" data-dismiss="ezmodal">Fechar</button>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>onClose</td>
+                                    <td>
+    <pre>
+    $('#mymodal').ezmodal({
+        'onClose': function () {
+             --- 
+        };
+    });
+    </pre>
+                                    </td>
+                                    <td>Performs a function soon before closing the modal</td>
+                                    <td width="120px">
+                                        <button type="button" class=" btn btn-primary" ezmodal-target="#example6">Example</button>
+                                        <div id="example6" class="ezmodal">
+                                            <div class="ezmodal-container">
+                                                <div class="ezmodal-header">
+                                                    <div class="ezmodal-close" data-dismiss="ezmodal">x</div>
+                                                    Execute function after closing
+                                                </div>
+                                                <div class="ezmodal-content">
+                                                    <p>Eu dou dinheiro pra minha filha. Eu dou dinheiro pra ela viajar, então é... é... Já vivi muito sem dinheiro, já vivi muito com dinheiro. -Jornalista: Coloca esse dinheiro na poupança que a senhora ganha R$10 mil por mês. -Dilma: O que que é R$10 mil?</p>
+                                
+                                                    <p>Se hoje é o dia das crianças... Ontem eu disse: o dia da criança é o dia da mãe, dos pais, das professoras, mas também é o dia dos animais, sempre que você olha uma criança, há sempre uma figura oculta, que é um cachorro atrás. O que é algo muito importante!</p>
+                                                </div>
+                                                <div class="ezmodal-footer">
+                                                    <button type="button" class="btn" data-dismiss="ezmodal">Fechar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
             <hr>
