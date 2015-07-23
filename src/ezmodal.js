@@ -4,7 +4,7 @@
  * github: https://github.com/markusslima/ezmodal
  *
  * Copyright (c) 2015 Markus Vinicius da Silva Lima
- * Version 0.1.1
+ * Version 0.1.2
  * Licensed under the MIT license.
  */
 (function ($) {
@@ -14,7 +14,7 @@
         if (event.keyCode === 27) {
             $('.ezmodal').each(function () {
                 if ($(this).ezmodal('isVisible')) {
-                    if ($(this).data('ezmodal').options.closable) {
+                    if ($(this).data('ezmodal').options.escClose) {
                         $(this).ezmodal('hide');
                     }
                 }
@@ -147,6 +147,7 @@
     $.fn.ezmodal.defaults = {
         'width': 500,
         'closable': true,
+        'escClose': true,
         'autoOpen': false,
         'onShow': function () {},
         'onClose': function () {}
@@ -162,6 +163,7 @@
 			var $this = $(this),
                 options = {
 					'width' : $this.attr('ezmodal-width'),
+                    'escClose' : $this.attr('ezmodal-escclose') === 'false' ? false : true,
 					'closable' : $this.attr('ezmodal-closable') === 'false' ? false : true,
 					'autoOpen' : $this.attr('ezmodal-autoopen') === 'true' ? true : false
 				};
