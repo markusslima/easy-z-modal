@@ -1,4 +1,4 @@
-# [Easy Zmodal v0.1.3](http://markusslima.github.io/easy-z-modal/)
+# [Easy Z modal v0.1.3](http://markusslima.github.io/easy-z-modal/)
 
 The ezmodal jquery is a simple and efficient modal plugin for jquery.
 
